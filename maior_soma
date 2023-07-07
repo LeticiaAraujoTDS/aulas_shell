@@ -1,0 +1,14 @@
+let result=$1+$2
+if [ $1 -gt $2 ] #teste se
+then
+	echo "O maior valor informado é $1"
+	echo "A soma dos valores informados é $result"
+else 
+	echo "O maior valor informado é $2"
+	echo "A soma dos valores informados é $result"
+fi
+
+lab@lab:~/IIR$ ./maior_soma 45 80
+O maior valor informado é 80
+A soma dos valores informados é 125
+lab@lab:~/IIR$ 
