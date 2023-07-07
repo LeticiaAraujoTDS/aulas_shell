@@ -1,0 +1,24 @@
+lab@lab:~/IIR$ for a in `ls a*`
+> do
+> 
+Display all 2555 possibilities? (y or n)
+> 
+Display all 2555 possibilities? (y or n)
+>   echo $a
+>   mv $a novo$a
+> done
+a1.txt
+lab@lab:~/IIR$ ls
+ backup                                          novoa1.txt
+ bkp                                             pares
+ bkp.ant                                        'pasta1?raiz'
+ Caixa+eletronico                                projeto.circ
+ ex1                                             raiz
+'Exercícios de Simulação de Circuitos (1).odt'   soma
+'Exercícios de Simulação de Circuitos.odt'       teste1
+ IIR                                             teste2
+'logisim-generic-2.7.1 (1).jar'                  teste3
+ logisim-generic-2.7.1.jar                       trabalho.circ
+ maior_soma
+lab@lab:~/IIR$ 
+
