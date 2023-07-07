@@ -1,9 +1,5 @@
 lab@lab:~/IIR$ for a in `ls a*`
 > do
-> 
-Display all 2555 possibilities? (y or n)
-> 
-Display all 2555 possibilities? (y or n)
 >   echo $a
 >   mv $a novo$a
 > done
