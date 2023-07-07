@@ -1,0 +1,6 @@
+let result=$1+$2
+echo $result
+
+lab@lab:~/IIR$ ./soma 10 8
+18
+lab@lab:~/IIR$ 
