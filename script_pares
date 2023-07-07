@@ -1,0 +1,16 @@
+num=$1
+i=0
+while [ $i -le $num ]
+do 
+	echo "$i "
+	let i=$i+2
+done
+
+lab@lab:~/IIR$ ./pares 10
+0 
+2 
+4 
+6 
+8 
+10 
+lab@lab:~/IIR$ 
