@@ -1,0 +1,33 @@
+op=0
+echo "Digite o primeiro valor :"
+read $1
+echo "Digite o segundo valor :"
+read $2
+while [ "$op" != "s" ]
+do
+	echo ""
+ 	echo "1 – Somar"
+ 	echo "2 – Subtrair"
+ 	echo "3 – Multiplicar"
+ 	echo "4 – Dividir"
+ 	echo "s – Sair "
+ 	echo -n "Informe a opção: "
+ 	echo ""
+ 	read op
+ 	case "$op" in
+	 1) result=$(( $1 + $2 ))
+            echo $result ;;
+	 2) let result=(expr $1-$2)
+	    echo $result ;;
+ 	 3) let result=(expr $1*$2) 
+ 	    echo $result ;;
+ 	 3) if [ $1 != 0 && $2 != 0]
+ 	      then
+ 	      let result=(expr $1/$2) 
+ 	      echo $result
+ 	      else
+ 	      echo "Erro: divisão por zero."
+ 	      fi ;;
+ 	 s) ;;
+ 	esac
+done
