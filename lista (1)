@@ -1,0 +1,11 @@
+dir=$1
+cd $dir
+for arq in `ls`
+do 
+   if [ -d $arq ]
+   then
+       echo "$arq (dir)"
+   else
+       echo "$arq"
+   fi
+done
