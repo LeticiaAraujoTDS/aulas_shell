@@ -1,33 +1,50 @@
-op=0
-echo "Digite o primeiro valor :"
-read $1
-echo "Digite o segundo valor :"
-read $2
-while [ "$op" != "s" ]
-do
-	echo ""
- 	echo "1 – Somar"
- 	echo "2 – Subtrair"
- 	echo "3 – Multiplicar"
- 	echo "4 – Dividir"
- 	echo "s – Sair "
- 	echo -n "Informe a opção: "
- 	echo ""
- 	read op
- 	case "$op" in
-	 1) result=$(( $1 + $2 ))
-            echo $result ;;
-	 2) let result=(expr $1-$2)
-	    echo $result ;;
- 	 3) let result=(expr $1*$2) 
- 	    echo $result ;;
- 	 3) if [ $1 != 0 && $2 != 0]
- 	      then
- 	      let result=(expr $1/$2) 
- 	      echo $result
- 	      else
- 	      echo "Erro: divisão por zero."
- 	      fi ;;
- 	 s) ;;
- 	esac
-done
+if [ $# -eq 3 ]
+then
+	op=$2
+		case "$op" in
+		x) let operacao=$1*$3 ;;
+		/) if [ $3 -eq 0 -o $1 -eq 0 ]
+		   then
+		       echo "Erro: divisão por zero."
+		       exit
+		   else
+		       let operacao=$1/$3
+		   fi;;
+		+) let operacao=$1+$3 ;;
+		-) let operacao=$1-$3 ;;
+	esac
+	echo " "
+	echo "Operação $1 $2 $3 = $operacao"
+	echo " "
+else
+    if [ $# -eq 0 ]
+    then
+    echo "Entre com o primeiro operando:"
+    read v1
+    echo "Entre com o operador:"
+    read op
+    echo "Entre com o segundo operando:"
+    read v3
+    
+    op=$op
+   	 case "$op" in
+		x) let operacao=$v1*$v3 ;;
+		/) if [ $v3 -eq 0 -o $v1 -eq 0 ]
+		   then
+		       echo "Erro: divisão por zero."
+		       exit
+		   else
+		       let operacao=$v1/$v3
+		   fi;;
+		+) let operacao=$v1+$v3 ;;
+		-) let operacao=$v1-$v3 ;;
+	esac
+	echo " "
+	echo "Operação $v1 $op $v3 = $operacao"
+	echo " "
+	
+	else
+	echo "Opção inválida. São necessários ao menos 3 parâmetros."
+	
+fi
+fi
