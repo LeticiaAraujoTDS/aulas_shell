@@ -1,0 +1,22 @@
+if [ $# -eq 3 ]
+then
+	op=$2
+		case "$op" in
+		X) let operacao=$1*$3 ;;
+		/) if [ $3 -eq 0 -o $1 -eq 0 ]
+		   then
+		       echo "Erro: divisão por zero."
+		       exit
+		   else
+		       let operacao=$1/$3
+		   fi;;
+		+) let operacao=$1+$3 ;;
+		-) let operacao=$1-$3 ;;
+	esac
+	echo " "
+	echo "$1 $2 $3 = $operacao"
+	echo " "
+else
+	echo "Opção inválida. Informe 3 parâmetros."
+	echo "Exemplos: 2 X 3, 2 / 3, 2 + 3 ou 3 - 2."
+fi
